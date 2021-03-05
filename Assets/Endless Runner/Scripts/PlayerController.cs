@@ -1,34 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; //eventual use...
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public Image staminaBar;
-
+    //public Image staminaBar;
+    private Rigidbody2D rb;
     private float move;
-    public int pHealth = 3;
-    [SerializeField] private bool grounded;
-    [SerializeField] private float speed = 10;
-    [SerializeField] private float maxStamina = 10;
-    [SerializeField] private float currentStamina = 10;
-    [SerializeField] private float sprintMulti = 2;
-    [SerializeField] private GameObject stamBar;
-    [SerializeField] private float jumpHeight = 3;
 
+    [SerializeField] public float moveSpeed = 10;          //Var 1
+    [SerializeField] public float jumpHeight = 5;          //Var 2   
+    [SerializeField] public bool grounded;
+    [SerializeField] public float sprintMulti = 2;         //Var 3
+    [SerializeField] public float pHealth = 5;             //Var 4
+                     
+    [SerializeField] public float maxFuel = 5;             //Var 5
+    [SerializeField] public float currentFuel = 5;
+    [SerializeField] public float jetpackForce = 10;       //Var 6
+                     
+    [SerializeField] public GameObject flame;
+                     
+                     
+    [SerializeField] public float maxStamina = 10;          //Var 7
+    [SerializeField] public float currentStamina = 10;
 
-    public Rigidbody2D rb;
-
-
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        stamBar.SetActive(false);
+        flame.SetActive(false);
     }
 
+    // Update is called once per frame
     void Update()
     {
+        move = Input.GetAxisRaw("Horizontal") * moveSpeed;
+
+        if (pHealth <= 0) // Game Over.
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 
         if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0)
         {
@@ -39,22 +52,51 @@ public class PlayerController : MonoBehaviour
         {
             currentStamina += 1 * Time.deltaTime;
         }
-        staminaBar.fillAmount = currentStamina / maxStamina;
+		
+        //staminaBar.fillAmount = currentStamina / maxStamina; 
 
         if (Input.GetButtonDown("Jump") && grounded)
         {
             rb.velocity += Vector2.up * jumpHeight;
         }
-
-        void FixedUpdate()
+		
+        else if (Input.GetButton("Jump") && grounded == false)
         {
-            rb.velocity = new Vector2(move, rb.velocity.y);
+            if (currentFuel > 0)
+            {
+                flame.SetActive(true);
+                rb.velocity += Vector2.up * jetpackForce * Time.deltaTime;
+                currentFuel -= Time.deltaTime;
+            }
+        }
+        else if (Input.GetButtonUp("Jump"))
+        {
+            flame.SetActive(false);
         }
 
-        void OnCollisionExit2D(Collision2D collision) // This shuould disable jumping on air
-        {
-            grounded = false;
-        }
 
     }
+
+
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(move, rb.velocity.y);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            grounded = true;
+            currentFuel = maxFuel;
+        }
+    }
+
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        grounded = false;
+    }
+
+
 }
