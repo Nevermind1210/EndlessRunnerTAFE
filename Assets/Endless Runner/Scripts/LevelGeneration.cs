@@ -18,13 +18,13 @@ public class LevelGeneration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (obsticleCount == 0)
+        if obsticleCount = 0
         {
-            //then skip obsticleCount;
+            then skip obsticleCount;
         }
         else
         {
-            obsticleCount += 1;
+            obsticleCount + 1;
         }
     }
 }
