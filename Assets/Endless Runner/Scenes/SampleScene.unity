@@ -140,8 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fea01cdf649f9444f8968d4457e2bfa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
-  parallexEffect: 0
+  levels: []
 --- !u!1 &384108415
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +262,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -349,6 +349,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea01cdf649f9444f8968d4457e2bfa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 310734013}
 --- !u!1 &714597310
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,8 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fea01cdf649f9444f8968d4457e2bfa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
-  parallexEffect: 0
+  levels: []
 --- !u!1 &2098623797
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +468,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   rb2D: {fileID: 2098623798}
+  moveSpeed: 10
 --- !u!212 &2098623800
 SpriteRenderer:
   m_ObjectHideFlags: 0
