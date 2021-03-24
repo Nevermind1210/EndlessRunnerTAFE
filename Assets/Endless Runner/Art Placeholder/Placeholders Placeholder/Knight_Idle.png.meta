@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: ab9c17855f0dd8748b89f4fe4f96c544
+guid: 9301751ab7258a948a76e65f1bae4126
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1336455167597127557
-    second: Knight Running2_0
+      213: -3858063850402955622
+    second: Knight_Idle_0
   - first:
-      213: -4858276313653748303
-    second: Knight Running2_1
+      213: 4327642080381475721
+    second: Knight_Idle_1
   - first:
-      213: -2771252901981549620
-    second: Knight Running2_2
-  - first:
-      213: -1360198897154809399
-    second: Knight Running2_3
-  - first:
-      213: 3215970081546540420
-    second: Knight Running2_4
+      213: -5663030001535758309
+    second: Knight_Idle_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,12 +100,33 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Knight Running2_0
+      name: Knight_Idle_0
       rect:
         serializedVersion: 2
-        x: 74
+        x: 58
+        y: 1
+        width: 160
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9eb4f37e57657ac0800000000000000
+      internalID: -3858063850402955622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 324
         y: 3
-        width: 136
+        width: 139
         height: 252
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -120,41 +135,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 587acd2e4ea0c8210800000000000000
-      internalID: 1336455167597127557
+      spriteID: 98b9b241b8fde0c30800000000000000
+      internalID: 4327642080381475721
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Knight Running2_1
+      name: Knight_Idle_2
       rect:
         serializedVersion: 2
-        x: 318
-        y: 4
-        width: 134
-        height: 249
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1bd59f7de6fe39cb0800000000000000
-      internalID: -4858276313653748303
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Knight Running2_2
-      rect:
-        serializedVersion: 2
-        x: 595
+        x: 594
         y: 3
-        width: 120
-        height: 252
+        width: 108
+        height: 251
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,50 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccb8e9a1b288a89d0800000000000000
-      internalID: -2771252901981549620
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Knight Running2_3
-      rect:
-        serializedVersion: 2
-        x: 838
-        y: 0
-        width: 136
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9c1a5374f4a9f1de0800000000000000
-      internalID: -1360198897154809399
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Knight Running2_4
-      rect:
-        serializedVersion: 2
-        x: 1088
-        y: 29
-        width: 162
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4859dde00cb61ac20800000000000000
-      internalID: 3215970081546540420
+      spriteID: b10d416b730e861b0800000000000000
+      internalID: -5663030001535758309
       vertices: []
       indices: 
       edges: []
