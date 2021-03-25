@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Endless Runner/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Endless Runner/Scenes/Main Menu.unity
+    guid: b1b948561a70c6246a82593037ffe9ab
+  - enabled: 1
+    path: Assets/Endless Runner/Scenes/Knight Runner Game.unity
+    guid: b8f2db7cfe94e4b43915c37e0581bfc4
+  - enabled: 1
+    path: Assets/Endless Runner/Scenes/GameOver.unity
+    guid: 31305d053ec08b74e86bc46c986ca673
   m_configObjects: {}
