@@ -9,7 +9,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask platLayerMask;
     public Rigidbody2D rb2D;
     private BoxCollider2D boxCollider2D;
-    [SerializeField]float moveSpeed = 10f;
+    [SerializeField] float moveSpeed = 10f;
+    public static int pHealth;
+
+    private void Start()
+    {
+        pHealth = 5;
+    }
 
     private void Awake()
     {
@@ -52,42 +58,42 @@ public class PlayerController : MonoBehaviour
             
     }
 
-    private void HandleMovement2() // this one removes control once in air.
-    {
-        float midAirControl = 1f;
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            if (IsGrounded())
-            {
-                rb2D.velocity = new Vector2(-moveSpeed, rb2D.velocity.y);
-            }
-            else
-            {             
-                rb2D.velocity += new Vector2(-moveSpeed * Time.deltaTime, 0);
-                rb2D.velocity = new Vector2(Mathf.Clamp(rb2D.velocity.x, -moveSpeed, +moveSpeed), rb2D.velocity.y);
-            }
-        }
-        else
-        {
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                if(IsGrounded())
-                {
-                    rb2D.velocity = new Vector2(+moveSpeed, rb2D.velocity.y);
-                } else
-                {
-                    rb2D.velocity += new Vector2(+moveSpeed * Time.deltaTime, 0);
-                    rb2D.velocity = new Vector2(Mathf.Clamp(rb2D.velocity.x, -moveSpeed, +moveSpeed), rb2D.velocity.y);
-                }
-            }
-            else
-            {
-                // No Keys Pressed
-                if (IsGrounded())
-                {
-                    rb2D.velocity = new Vector2(0, rb2D.velocity.y);
-                }
-            }
-        }
-    }
+    //private void HandleMovement2() // this one removes control once in air.
+    //{
+    //    float midAirControl = 1f;
+    //    if (Input.GetKey(KeyCode.LeftArrow))
+    //    {
+    //        if (IsGrounded())
+    //        {
+    //            rb2D.velocity = new Vector2(-moveSpeed, rb2D.velocity.y);
+    //        }
+    //        else
+    //        {             
+    //            rb2D.velocity += new Vector2(-moveSpeed * Time.deltaTime, 0);
+    //            rb2D.velocity = new Vector2(Mathf.Clamp(rb2D.velocity.x, -moveSpeed, +moveSpeed), rb2D.velocity.y);
+    //        }
+    //    }
+    //    else
+    //    {
+    //        if (Input.GetKey(KeyCode.RightArrow))
+    //        {
+    //            if(IsGrounded())
+    //            {
+    //                rb2D.velocity = new Vector2(+moveSpeed, rb2D.velocity.y);
+    //            } else
+    //            {
+    //                rb2D.velocity += new Vector2(+moveSpeed * Time.deltaTime, 0);
+    //                rb2D.velocity = new Vector2(Mathf.Clamp(rb2D.velocity.x, -moveSpeed, +moveSpeed), rb2D.velocity.y);
+    //            }
+    //        }
+    //        else
+    //        {
+    //            // No Keys Pressed
+    //            if (IsGrounded())
+    //            {
+    //                rb2D.velocity = new Vector2(0, rb2D.velocity.y);
+    //            }
+    //        }
+    //    }
+    //}
 }

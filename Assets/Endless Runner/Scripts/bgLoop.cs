@@ -29,33 +29,32 @@ public class bgLoop : MonoBehaviour
          }*/
 
         loadNextBG(levels[0]);
+       
     }
 
-    void loadChildObjects(GameObject obj)
-    {
-        SpriteRenderer spriteRen = obj.GetComponent<SpriteRenderer>();
-        float objectWidth = spriteRen.bounds.size.x;
-        int childsNeeded = (int)Mathf.Ceil(screenBounds.x * 2 / objectWidth);
-       // GameObject clone = Instantiate(obj) as GameObject;
-        for (int i = 0; i <= childsNeeded; i++)
-        {
-            GameObject c = Instantiate(obj) as GameObject;
-            c.transform.SetParent(backGroundParent);
-            c.transform.position = new Vector3(objectWidth * i, obj.transform.position.y, obj.transform.position.z);
-            c.name = obj.name + i;
-        }
-        //Destroy(clone);
-        //Destroy(obj.GetComponent<SpriteRenderer>());
-    }
-
-
+    //void loadChildObjects(GameObject obj)
+    //{
+    //    SpriteRenderer spriteRen = obj.GetComponent<SpriteRenderer>();
+    //    float objectWidth = spriteRen.bounds.size.x;
+    //    int childsNeeded = (int)Mathf.Ceil(screenBounds.x * 2 / objectWidth);
+    //   // GameObject clone = Instantiate(obj) as GameObject;
+    //    for (int i = 0; i <= childsNeeded; i++)
+    //    {
+    //        GameObject c = Instantiate(obj) as GameObject;
+    //        c.transform.SetParent(backGroundParent);
+    //        c.transform.position = new Vector3(objectWidth * i, obj.transform.position.y, obj.transform.position.z);
+    //        c.name = obj.name + i;
+    //    }
+    //    //Destroy(clone);
+    //    //Destroy(obj.GetComponent<SpriteRenderer>());
+    //}
 
     void loadNextBG(GameObject obj)
     {
         //Thank you Daniel!! 
-        if(lastBackground.bounds.max.x < screenBounds.x)
+        if(lastBackground.bounds.max.x  > screenBounds.x)
         {
-            GameObject nextBG = Instantiate(obj) as GameObject;
+            GameObject nextBG = Instantiate(obj);
 
             Vector3 BGPos = lastBackground.transform.position;
             BGPos.x += lastBackground.size.x;
